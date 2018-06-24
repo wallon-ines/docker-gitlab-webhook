@@ -11,17 +11,8 @@ import subprocess
 import yaml
 import sys
 
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-
 from flask import Flask
 from flask import g, jsonify, request, abort
-
-import glob
-import logging
-import logging.handlers
-
 
 app = Flask(__name__)
 app.config['DEBUG'] = False
@@ -56,18 +47,18 @@ def receive():
   token_gitlab = request.headers.get('X-Gitlab-Token', False)
   data = request.json or {}
 
-    
+
   if not token_gitlab:
     abort(403, 'No X-Gitlab-Token header given')
 
   if ('repository' in data and 'name' in data['repository'] and
       data['repository']['name'] == repository):
     print("Matching repo: {}".format(data['repository']), file=sys.stderr)
-    
+
     if token_gitlab != token:
       print('Token invalid, expected: {}, got: {}'.format(token, token), file=sys.stderr)
     url = data['repository']['url']
-    
+
 
     # clean up git workdir, reset changes, fetch updates
     os.chdir(repo_dir)
