@@ -1,4 +1,7 @@
-FROM python:3
+FROM python:3-alpine
+
+# Install curl
+RUN apk add --no-cache curl
 
 # Install docker
 RUN cd /usr/bin; \
