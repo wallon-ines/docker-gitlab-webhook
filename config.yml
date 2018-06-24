@@ -1,0 +1,31 @@
+hooks:
+  'test':
+    repository: test
+    script: /tmp/test/up
+    token: xyz
+    repo_dir: /tmp/test/
+    local_branch: master
+  'titi':
+    repository: titi
+    script: /tmp/test/up
+    token: xyz
+    repo_dir: /tmp/titi/
+    local_branch: master
+  'titia':
+     repository: tita
+     script: /tmp/test/up
+     token: xyz
+     repo_dir: /tmp/tita/
+     local_branch: master
+  'titib':
+     repository: tita
+     script: /tmp/test/up
+     token: xyz
+     repo_dir: /tmp/tita/
+     local_branch: master 
+  'titic':
+     repository: titcdc
+     script: /tmp/test/up
+     token: xyz
+     repo_dir: /tmp/tita/
+     local_branch: master     
