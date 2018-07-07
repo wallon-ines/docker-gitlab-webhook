@@ -1,7 +1,7 @@
 FROM python:3-alpine
 
 # Install curl
-RUN apk add --no-cache curl git
+RUN apk add --no-cache curl git openssh-client
 
 # Install docker
 RUN cd /usr/bin; \
