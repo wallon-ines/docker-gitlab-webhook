@@ -30,7 +30,7 @@ post_script = os.getenv("POST_SCRIPT")
 def run_it(cmd):
   try:
       output = subprocess.check_output(
-          cmd, executable='/bin/bash', shell=True,
+          cmd, executable='/bin/sh', shell=True,
           stderr=subprocess.STDOUT, universal_newlines=True)
   except subprocess.CalledProcessError as er:
       print(er.output, file=sys.stderr)
