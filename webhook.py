@@ -64,7 +64,7 @@ def receive():
     os.chdir(repo_dir)
     if pre_script:
       ok, pre_script_output = run_it(pre_script)
-    ok, output = run_it('git checkout -- . && git clean -fd && git pull && git checkout {}'.format(branch))
+    ok, output = run_it('git checkout -- . && git pull && git checkout {}'.format(branch))
     print(output, file=sys.stderr)
     if post_script:
       ok, post_script_output = run_it(post_script)
